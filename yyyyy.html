@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuppa's Speciality Coffee</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#465233', // درجة الزيتوني الأساسية للوجو والخلفيات
+                            dark: '#323B24',    // درجة زيتوني داكنة للعناصر والفوتر
+                            light: '#5E6D46',   // درجة أفتح للتأثيرات
+                        },
+                        cream: '#EFECE6',       // لون نصي دافئ وفاتح للتطابق مع اللوجو
+                        sand: '#3B452B',        // خلفية للبطاقات بدرجة زيتوني متناسقة
+                        accent: '#D4835F'       // لون نحاسي دافئ للتبريز
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #465233;
+            color: #EFECE6;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-badge, .menu-badge {
+            font-family: 'Great Vibes', cursive;
+            letter-spacing: 0.05em;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #323B24;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5E6D46;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-brand text-cream selection:bg-accent selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#465233]/90 backdrop-blur-md border-b border-cream/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wide text-cream">Cuppa's<span class="text-accent">.</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-cream/90">
+                <a href="#home" class="hover:text-accent transition-colors">Home</a>
+                <a href="#menu" class="hover:text-accent transition-colors">Menu</a>
+                <a href="#specials" class="hover:text-accent transition-colors">Seasonal</a>
+                <a href="#story" class="hover:text-accent transition-colors">Our Story</a>
+                <a href="#locations" class="hover:text-accent transition-colors">Locations</a>
+                <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button id="menu-btn" class="md:hidden text-cream text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand border-b border-cream/10 px-6 py-4 space-y-3">
+            <a href="#home" class="block text-cream font-medium hover:text-accent">Home</a>
+            <a href="#menu" class="block text-cream font-medium hover:text-accent">Menu</a>
+            <a href="#specials" class="block text-cream font-medium hover:text-accent">Seasonal</a>
+            <a href="#story" class="block text-cream font-medium hover:text-accent">Our Story</a>
+            <a href="#locations" class="block text-cream font-medium hover:text-accent">Locations</a>
+            <a href="#contact" class="block text-cream font-medium hover:text-accent">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-16 md:pt-40 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 space-y-6 text-center md:text-left">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-dark text-cream text-lg font-badge tracking-wide border border-cream/10">
+                <i class="fa-solid fa-mug-hot text-accent"></i> Speciality Coffee House
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-cream">
+                How do you like <br><span class="italic font-normal text-accent font-badge text-5xl sm:text-7xl">your coffee?</span>
+            </h1>
+            <p class="text-lg text-cream/80 max-w-xl mx-auto md:mx-0">
+                Crafted with passion, sourced from the finest beans, and brewed to perfection. Elevate your daily coffee ritual with our signature blends and artisanal bites.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+                <a href="#menu" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent text-white font-semibold hover:bg-accent/90 transition-all text-center shadow-md">
+                    Explore Menu
+                </a>
+                <a href="#locations" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-cream/20 text-cream font-semibold hover:bg-brand-dark transition-all text-center">
+                    Find a Branch
+                </a>
+            </div>
+        </div>
+        <div class="flex-1 w-full max-w-lg">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-brand-dark aspect-square flex items-center justify-center border-4 border-cream/20">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-light via-brand to-brand-dark opacity-90"></div>
+                <div class="relative z-10 text-center p-8 space-y-4 text-cream">
+                    <i class="fa-solid fa-mug-saucer text-6xl text-accent"></i>
+                    <h2 class="font-serif text-3xl font-bold">Cuppa's Speciality Coffee</h2>
+                    <p class="text-sm text-cream/80 italic font-badge text-2xl">"Your daily dose of warmth and elegance."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section id="menu" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-accent text-3xl font-badge tracking-widest">Handcrafted Excellence</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 text-cream">Our Complete Menu</h2>
+            <p class="text-cream/70 text-sm mt-2">All prices include VAT. Explore our extensive selection of coffees, matcha, food, and desserts.</p>
+        </div>
+
+        <!-- Menu Category Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+            <button onclick="filterMenu('hot')" class="menu-tab active-tab px-5 py-2 rounded-full text-base font-badge transition-all bg-accent text-white shadow-sm">Hot Coffee</button>
+            <button onclick="filterMenu('iced')" class="menu-tab px-5 py-2 rounded-full text-base font-badge transition-all bg-brand-dark text-cream border border-cream/10 hover:bg-brand-light">Iced Brews</button>
+            <button onclick="filterMenu('matcha')" class="menu-tab px-5 py-2 rounded-full text-base font-badge transition-all bg-brand-dark text-cream border border-cream/10 hover:bg-brand-light">Matcha</button>
+            <button onclick="filterMenu('noncoffee')" class="menu-tab px-5 py-2 rounded-full text-base font-badge transition-all bg-brand-dark text-cream border border-cream/10 hover:bg-brand-light">Non-Coffee & Frappe</button>
+            <button onclick="filterMenu('drip')" class="menu-tab px-5 py-2 rounded-full text-base font-badge transition-all bg-brand-dark text-cream border border-cream/10 hover:bg-brand-light">Speciality Drip & Tea</button>
+            <button onclick="filterMenu('food')" class="menu-tab px-5 py-2 rounded-full text-base font-badge transition-all bg-brand-dark text-cream border border-cream/10 hover:bg-brand-light">Food & Bakery</button>
+            <button onclick="filterMenu('extras')" class="menu-tab px-5 py-2 rounded-full text-base font-badge transition-all bg-brand-dark text-cream border border-cream/10 hover:bg-brand-light">Extras</button>
+        </div>
+
+        <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="py-20 bg-brand-dark text-cream relative overflow-hidden border-y border-cream/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-accent text-3xl font-badge tracking-widest">About Cuppa's</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold leading-tight text-cream">Where Every Cup Tells a Story.</h2>
+                    <p class="text-cream/80 leading-relaxed">
+                        Founded with a deep love for specialty coffee, Cuppa's is designed to be your neighborhood sanctuary. From carefully selecting beans harvested from sustainable farms to expert roasting and precise extraction, we pour our hearts into every single cup.
+                    </p>
+                </div>
+                <div class="bg-brand border border-cream/10 rounded-3xl p-8 backdrop-blur-sm space-y-6">
+                    <h3 class="font-serif text-2xl font-bold text-cream">Visit Our Atmosphere</h3>
+                    <ul class="space-y-4 text-cream/90 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>Cozy seating layouts designed for relaxation and productivity.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>Professional baristas dedicated to crafting your favorite brews.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-accent text-3xl font-badge tracking-widest">Find Us</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 text-cream">Our Branches</h2>
+            <p class="text-cream/70 text-sm mt-2">Drop by our branches across Cairo. Open every day: 8:00 am - 1:00 am.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-brand-dark rounded-3xl p-8 border border-cream/10 shadow-sm space-y-6">
+                <div class="flex items-center justify-between">
+                    <span class="px-4 py-1 rounded-full bg-accent text-white text-lg font-badge">Branch 01</span>
+                    <span class="text-xs font-medium text-cream/70"><i class="fa-regular fa-clock text-accent mr-1.5"></i> 8:00 am - 1:00 am</span>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-cream">East Hub Mall, Madinaty</h3>
+                <div class="pt-4 border-t border-cream/10 flex items-center justify-between">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-cream/60">Everyday Working Hours</span>
+                    <a href="https://www.google.com/maps/place/Cuppa%E2%80%99s+Speciality+Coffee" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline">
+                        Get Directions <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-brand-dark rounded-3xl p-8 border border-cream/10 shadow-sm space-y-6">
+                <div class="flex items-center justify-between">
+                    <span class="px-4 py-1 rounded-full bg-accent text-white text-lg font-badge">Branch 02</span>
+                    <span class="text-xs font-medium text-cream/70"><i class="fa-regular fa-clock text-accent mr-1.5"></i> 8:00 am - 1:00 am</span>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-cream">Domo 9 Strip Mall, First Settlement</h3>
+                <div class="pt-4 border-t border-cream/10 flex items-center justify-between">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-cream/60">Everyday Working Hours</span>
+                    <a href="https://www.google.com/maps/place/Cuppa%E2%80%99s+Speciality+Coffee" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline">
+                        Get Directions <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-brand-dark text-cream pt-16 pb-12 border-t border-cream/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4 md:col-span-1">
+                <span class="font-serif text-2xl font-bold tracking-wide text-cream">Cuppa's<span class="text-accent">.</span></span>
+                <p class="text-cream/70 text-sm">Specialty coffee brewed with precision and passion. Always fresh, always exceptional.</p>
+                <div class="flex items-center gap-3 pt-2">
+                    <a href="https://www.instagram.com/cuppas_eg" target="_blank" class="w-9 h-9 rounded-full bg-brand flex items-center justify-center hover:bg-accent transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-brand flex items-center justify-center hover:bg-accent transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-brand flex items-center justify-center hover:bg-accent transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-serif font-bold text-lg mb-4 text-cream">Quick Links</h4>
+                <ul class="space-y-2.5 text-sm text-cream/70">
+                    <li><a href="#home" class="hover:text-accent transition-colors">Home</a></li>
+                    <li><a href="#menu" class="hover:text-accent transition-colors">Menu</a></li>
+                    <li><a href="#story" class="hover:text-accent transition-colors">Our Story</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif font-bold text-lg mb-4 text-cream">Locations</h4>
+                <ul class="space-y-2.5 text-sm text-cream/70">
+                    <li>East Hub Mall, Madinaty</li>
+                    <li>Domo 9 Strip Mall, First Settlement</li>
+                    <li class="pt-2 text-xs text-accent font-semibold">Open Everyday: 8:00 AM - 1:00 AM</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif font-bold text-lg mb-4 text-cream">Stay Updated</h4>
+                <p class="text-cream/70 text-sm mb-4">Subscribe to receive updates on seasonal drinks and offers.</p>
+                <form onsubmit="event.preventDefault(); alert('Thank you for subscribing to Cuppa\'s!');" class="space-y-2">
+                    <input type="email" placeholder="Your email address" required class="w-full px-4 py-2.5 rounded-lg bg-brand text-cream placeholder-cream/50 text-sm border border-cream/20 focus:outline-none focus:border-accent">
+                    <button type="submit" class="w-full py-2.5 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-cream/10 text-center text-xs text-cream/50">
+            &copy; 2026 Cuppa's Speciality Coffee. All rights reserved. All prices include VAT.
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity & Complete Menu Data -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const menuData = {
+            hot: [
+                { name: "Espresso", desc: "Signature Black (Single / Double)", price: "70 EGP" },
+                { name: "Americano", desc: "Signature Black - Filtered hot water with espresso", price: "90 EGP" },
+                { name: "Turkish Coffee", desc: "Single / Double extraction", price: "50 / 55 EGP" },
+                { name: "Cortado", desc: "Signature White - Equal parts espresso and textured milk", price: "95 EGP" },
+                { name: "Flat White", desc: "Double ristretto with micro-foamed silky milk", price: "100 EGP" },
+                { name: "Latte", desc: "Rich espresso with velvety microfoam", price: "130 / 140 EGP" },
+                { name: "Cappuccino", desc: "Classic espresso with rich milk foam texture", price: "130 / 140 EGP" },
+                { name: "Mocha", desc: "Espresso combined with chocolate and milk", price: "150 / 160 EGP" },
+                { name: "White Mocha", desc: "Smooth white chocolate with espresso and milk", price: "150 / 160 EGP" },
+                { name: "Spanish Latte", desc: "Espresso, textured milk, and signature condensed milk", price: "160 / 170 EGP" },
+                { name: "Caramel Macchiato", desc: "Vanilla milk, espresso, and caramel drizzle", price: "150 / 160 EGP" },
+                { name: "Salted Caramel Latte", desc: "Sweet and salty caramel infused latte", price: "150 / 160 EGP" },
+                { name: "Honey Cinnamon Latte", desc: "Aromatic honey and cinnamon with espresso", price: "155 / 165 EGP" },
+                { name: "Pistachio Almond Latte", desc: "Rich pistachio blend with espresso and milk", price: "160 / 170 EGP" }
+            ],
+            iced: [
+                { name: "Iced Americano", desc: "Espresso poured over filtered cold water and ice", price: "95 EGP" },
+                { name: "Iced Latte", desc: "Fresh espresso shaken with chilled milk and ice", price: "130 EGP" },
+                { name: "Iced Caramel Macchiato", desc: "Vanilla milk, ice, espresso shots, and caramel", price: "160 EGP" },
+                { name: "Iced Mocha", desc: "Chilled chocolate coffee blend", price: "160 EGP" },
+                { name: "Iced White Mocha", desc: "Refreshing white chocolate espresso iced drink", price: "160 EGP" },
+                { name: "Iced Spanish Latte", desc: "Our signature sweet blend served ice-cold", price: "160 EGP" },
+                { name: "Iced Lotus Latte", desc: "Lotus spread infused creamy iced coffee", price: "160 EGP" },
+                { name: "Iced Pistachio Almond", desc: "Pistachio and almond cold specialty coffee", price: "175 EGP" },
+                { name: "Iced Honey Cinnamon", desc: "Sweet honey and cinnamon iced coffee", price: "160 EGP" },
+                { name: "Iced Salted Caramel", desc: "Caramel notes with a touch of salt over ice", price: "160 EGP" }
+            ],
+            matcha: [
+                { name: "Matcha Honey Latte (Hot)", desc: "Ceremonial grade Japanese matcha with honey", price: "140 / 150 EGP" },
+                { name: "Matcha Chai Latte (Hot)", desc: "Matcha infused with aromatic spiced chai", price: "150 / 160 EGP" },
+                { name: "Matcha Spanish Latte (Hot)", desc: "Ceremonial matcha with sweet condensed milk", price: "150 / 160 EGP" },
+                { name: "Iced Matcha Honey Latte", desc: "Cold ceremonial matcha with honey", price: "150 EGP" },
+                { name: "Iced Mango Matcha Latte", desc: "Matcha layered with sweet mango purée", price: "160 EGP" },
+                { name: "Iced Strawberry Matcha Latte", desc: "Matcha layered over sweet strawberry purée", price: "160 EGP" },
+                { name: "Iced Matcha Cream Coconut Cloud", desc: "Tropical coconut cream topping over iced matcha", price: "160 EGP" },
+                { name: "Matcha Frappe", desc: "Blended ice matcha beverage", price: "150 EGP" },
+                { name: "Mango Matcha Frappe", desc: "Blended mango and matcha delight", price: "170 EGP" },
+                { name: "Strawberry Matcha Frappe", desc: "Blended strawberry and matcha creation", price: "170 EGP" },
+                { name: "Mixed Berries Matcha Frappe", desc: "Matcha blended with mixed berries", price: "170 EGP" },
+                { name: "Salted Caramel Matcha Frappe", desc: "Caramel twist on blended matcha", price: "170 EGP" }
+            ],
+            noncoffee: [
+                { name: "Espresso Frappe", desc: "Blended coffee ice drink", price: "140 EGP" },
+                { name: "Caramel Coffee Frappe", desc: "Blended caramel coffee", price: "160 EGP" },
+                { name: "Mocha Frappe", desc: "Blended chocolate coffee", price: "160 EGP" },
+                { name: "White Mocha Frappe", desc: "Blended white chocolate coffee", price: "160 EGP" },
+                { name: "Spanish Coffee Frappe", desc: "Blended sweet spanish coffee", price: "160 EGP" },
+                { name: "Lotus Cinnamon Frappe", desc: "Blended lotus and cinnamon", price: "160 EGP" },
+                { name: "Salted Caramel Coffee Frappe", desc: "Blended salted caramel coffee", price: "160 EGP" },
+                { name: "Vanilla Frappe", desc: "Blended ice, milk, and sweet vanilla", price: "130 EGP" },
+                { name: "Caramel Frappe", desc: "Blended caramel non-coffee frappe", price: "130 EGP" },
+                { name: "Chocolate Frappe", desc: "Rich chocolate blended with ice and milk", price: "130 EGP" },
+                { name: "Pistachio Frappe", desc: "Pistachio blended creamy drink", price: "140 EGP" },
+                { name: "Lotus Frappe", desc: "Lotus biscuit blended drink", price: "140 EGP" },
+                { name: "Mixed Berries Frappe", desc: "Fruity blended berries", price: "140 EGP" },
+                { name: "Strawberry Frappe", desc: "Sweet strawberry blended drink", price: "140 EGP" },
+                { name: "Mango Frappe", desc: "Tropical mango blended treat", price: "140 EGP" },
+                { name: "Hot Chocolate Fudge", desc: "Rich molten chocolate warmth", price: "150 EGP" },
+                { name: "Classic Mojito", desc: "Fresh mint, lime juice, and sparkling soda", price: "120 EGP" },
+                { name: "Passion Fruit Mojito", desc: "Tropical passion fruit mojito", price: "145 EGP" },
+                { name: "Pink Lemonade", desc: "Refreshing pink citrus drink", price: "145 EGP" },
+                { name: "Pineapple Ginger", desc: "Pineapple with a ginger kick", price: "145 EGP" },
+                { name: "Mixed Berries Mojito", desc: "Berries sparkling mojito", price: "145 EGP" },
+                { name: "Red Bull Breeze", desc: "Energizing Red Bull mocktail blend", price: "180 EGP" }
+            ],
+            drip: [
+                { name: "V60 / Ice V60", desc: "Speciality pour-over filtered coffee", price: "160 EGP" },
+                { name: "French Press", desc: "Full-bodied steeped coffee press", price: "160 EGP" },
+                { name: "Aero Press", desc: "Clean and vibrant pressure-brewed coffee", price: "160 EGP" },
+                { name: "Chemex", desc: "Smooth and clear pour-over coffee", price: "160 EGP" },
+                { name: "English Breakfast Tea", desc: "Classic black breakfast tea", price: "50 EGP" },
+                { name: "Tea with Milk", desc: "Traditional tea served with fresh milk", price: "55 EGP" },
+                { name: "Green Tea", desc: "Soothing organic green tea", price: "50 EGP" },
+                { name: "Flavored Tea", desc: "Assorted premium flavored infusions", price: "60 EGP" }
+            ],
+            food: [
+                { name: "Plain Croissant", desc: "Flaky, golden-brown pastry baked fresh daily", price: "85 EGP" },
+                { name: "Almond & Custard Croissant", desc: "Filled with frangipane and custard", price: "120 EGP" },
+                { name: "Turkey & Cheese Croissant", desc: "Stuffed with smoked turkey and cheese", price: "145 EGP" },
+                { name: "Zaatar Croissant", desc: "Savory middle eastern zaatar pastry", price: "100 EGP" },
+                { name: "Ferrero Rocher Croissant", desc: "Filled with rich chocolate hazelnut spread", price: "130 EGP" },
+                { name: "Pistachio Croissant", desc: "Filled with luxurious pistachio cream", price: "130 EGP" },
+                { name: "Pain Suisse au Chocolat", desc: "Laminated pastry with chocolate strips", price: "110 EGP" },
+                { name: "Roast Beef Sandwich", desc: "Premium roast beef with artisan dressings", price: "195 EGP" },
+                { name: "Halloumi Sandwich", desc: "Grilled halloumi cheese with fresh greens", price: "170 EGP" },
+                { name: "Panini Sweet Chilli Mayo", desc: "Panini with sweet chilli mayonnaise", price: "165 EGP" },
+                { name: "Chicken Spicy Ranch", desc: "Spicy ranch chicken sandwich", price: "155 EGP" },
+                { name: "Salmon Bagel Cream Cheese", desc: "Smoked salmon and cream cheese bagel", price: "235 EGP" },
+                { name: "Caprese", desc: "Fresh mozzarella, tomato, and basil", price: "180 EGP" },
+                { name: "Chicken Pesto", desc: "Grilled chicken with signature pesto spread", price: "210 EGP" },
+                { name: "Taco Salad", desc: "Crunchy, flavorful taco salad bowl", price: "195 EGP" },
+                { name: "Caesar Salad", desc: "Classic romaine, parmesan, and croutons", price: "195 EGP" },
+                { name: "Tiramisu", desc: "Italian espresso-soaked mascarpone dessert", price: "150 EGP" },
+                { name: "Blueberry Cheesecake", desc: "Creamy cheesecake with blueberry topping", price: "150 EGP" },
+                { name: "Chocolate Fudge", desc: "Decadent rich chocolate cake slice", price: "120 EGP" },
+                { name: "Honey Cake", desc: "Traditional layered honey sponge cake", price: "130 EGP" },
+                { name: "Carrot Loaf Cake", desc: "Moist spiced carrot loaf slice", price: "90 EGP" },
+                { name: "Lemon Loaf Cake", desc: "Zesty glazed lemon loaf slice", price: "100 EGP" },
+                { name: "Seasonal Fruit Danish", desc: "Pastry topped with seasonal fresh fruits", price: "120 EGP" },
+                { name: "Double Chocolate Cookie", desc: "Rich chewy double chocolate cookie", price: "110 EGP" },
+                { name: "Red Velvet Cream Cookie", desc: "Red velvet cookie with cream cheese filling", price: "110 EGP" },
+                { name: "White Chocolate Lotus Cookie", desc: "Lotus and white chocolate cookie", price: "110 EGP" }
+            ],
+            extras: [
+                { name: "Sparkling Water", desc: "Refreshing bottled sparkling water", price: "40 EGP" },
+                { name: "Mineral Water", desc: "Pure natural mineral water", price: "20 EGP" },
+                { name: "Espresso Shot", desc: "Extra shot of espresso", price: "30 EGP" },
+                { name: "Extra Milk", desc: "Additional portion of fresh milk", price: "25 EGP" },
+                { name: "Alternative Milk", desc: "Oat, almond, or soy milk option", price: "40 EGP" },
+                { name: "Flavor", desc: "Syrup flavor addition", price: "25 EGP" },
+                { name: "Whipped Cream", desc: "Generous topping of whipped cream", price: "30 EGP" },
+                { name: "Extra Sauce", desc: "Additional drizzle or sauce", price: "25 EGP" },
+                { name: "Marshmallow", desc: "Sweet marshmallow toppings", price: "30 EGP" },
+                { name: "Marshmallow Fluff", desc: "Velvety marshmallow spread", price: "30 EGP" }
+            ]
+        };
+
+        function renderMenu(category) {
+            const grid = document.getElementById('menu-grid');
+            const items = menuData[category] || [];
+            
+            grid.innerHTML = items.map(item => `
+                <div class="bg-brand-dark rounded-2xl p-6 border border-cream/10 flex flex-col justify-between hover:shadow-md transition-all">
+                    <div>
+                        <div class="flex items-start justify-between gap-4">
+                            <h3 class="font-serif text-xl font-bold text-cream">${item.name}</h3>
+                            <span class="font-serif font-bold text-lg text-accent whitespace-nowrap">${item.price}</span>
+                        </div>
+                        <p class="text-cream/70 text-sm mt-2">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterMenu(category) {
+            document.querySelectorAll('.menu-tab').forEach(btn => {
+                btn.classList.remove('bg-accent', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-brand-dark', 'text-cream', 'border', 'border-cream/15');
+            });
+            event.target.classList.remove('bg-brand-dark', 'text-cream', 'border', 'border-cream/15');
+            event.target.classList.add('bg-accent', 'text-white', 'shadow-sm');
+
+            renderMenu(category);
+        }
+
+        renderMenu('hot');
+    </script>
+</body>
+</html>
